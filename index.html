@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>BackInMotion Health</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--soft:#f2f8f8;--sky:#dff0f6;--sage:#d5ebe0;--ink:#12303a;--mut:#4d6670;--teal:#0f8b8d;--teal2:#0b6f78;--line:#e0ecee;--card:#fff;--sh:0 10px 30px rgba(18,48,58,.08);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0e1d22;--soft:#13272d;--sky:#173840;--sage:#17332c;--ink:#e8f3f4;--mut:#a5bcc2;--teal:#3cc0bf;--teal2:#2aa8a8;--line:#22383f;--card:#152a30;--sh:0 10px 30px rgba(0,0,0,.3)}}
+:root[data-theme="dark"]{--bg:#0e1d22;--soft:#13272d;--sky:#173840;--sage:#17332c;--ink:#e8f3f4;--mut:#a5bcc2;--teal:#3cc0bf;--teal2:#2aa8a8;--line:#22383f;--card:#152a30;--sh:0 10px 30px rgba(0,0,0,.3)}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 90px);scroll-behavior:smooth}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.65;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+h1,h2,h3{line-height:1.12;margin:0;letter-spacing:-.02em}
+p{margin:0;color:var(--mut)}
+.w{max-width:1200px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.top{background:var(--ink);color:#e8f3f4;font-size:14px}
+.top .w{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px}
+.top a{font-weight:700;color:#8fe0dc}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.03em}
+.logo small{font-weight:500;color:var(--mut);font-size:13px;letter-spacing:0;margin-left:2px}
+.links{display:flex;gap:34px;font-weight:600;font-size:15px}
+.links a{position:relative;padding:4px 0}
+.links a:after{content:"";position:absolute;left:0;bottom:-2px;height:2px;width:0;background:var(--teal);transition:width .3s}
+.links a:hover:after{width:100%}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border-radius:999px;padding:14px 26px;font-weight:700;font-size:15px;border:2px solid transparent;cursor:pointer;font-family:inherit;transition:transform .25s,box-shadow .25s,background .25s;min-height:48px}
+.btn.p{background:var(--teal2);color:#fff;box-shadow:0 8px 20px rgba(15,139,141,.28)}
+.btn.p:hover{transform:translateY(-2px);background:var(--teal);box-shadow:0 12px 26px rgba(15,139,141,.35)}
+.btn.o{border-color:var(--teal2);color:var(--teal2)}
+.btn.o:hover{background:var(--sky);transform:translateY(-2px)}
+.btn.w2{background:#fff;color:#0b4f57}.btn.w2:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(0,0,0,.2)}
+.burger{display:none;background:none;border:0;width:48px;height:48px;cursor:pointer;color:var(--ink)}
+.mnav{display:none}
+.hero{padding:64px 0 96px;background:radial-gradient(900px 500px at 85% 10%,var(--sky),transparent 70%),radial-gradient(600px 400px at 0% 100%,var(--sage),transparent 70%)}
+.hero .w{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.hero h1{font-size:clamp(42px,6vw,76px);font-weight:800}
+.hero h1 span{display:block;color:var(--teal2)}
+.hero p.l{font-size:19px;max-width:520px;margin:26px 0 34px}
+.row{display:flex;gap:14px;flex-wrap:wrap}
+.trust{display:flex;gap:26px;margin-top:38px;color:var(--mut);font-size:14px;font-weight:600;flex-wrap:wrap}
+.trust i{color:var(--teal);font-style:normal;margin-right:6px}
+.vis{position:relative}
+.frame{border-radius:36px 140px 36px 36px;overflow:hidden;box-shadow:0 30px 60px rgba(18,48,58,.18);aspect-ratio:4/4.6;background:linear-gradient(160deg,#bfe3ea,#d9efe4);transition:transform .6s}
+.frame:hover{transform:scale(1.015)}
+.frame svg{width:100%;height:100%;display:block}
+.float{position:absolute;background:var(--card);border-radius:20px;padding:16px 20px;box-shadow:var(--sh);display:flex;gap:14px;align-items:center;animation:fl 6s ease-in-out infinite}
+.float b{display:block;font-size:15px}.float span{font-size:13px;color:var(--mut)}
+.f1{left:-34px;bottom:56px}.f2{right:-10px;top:34px;animation-delay:-3s}
+.ic{width:46px;height:46px;border-radius:14px;background:var(--sky);color:var(--teal2);display:grid;place-items:center;flex:none}
+.ic svg{width:24px;height:24px}
+@keyframes fl{50%{transform:translateY(-8px)}}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+h2{font-size:clamp(32px,4vw,48px);font-weight:700}
+.sec-h{max-width:640px;margin-bottom:52px}.sec-h p{margin-top:16px;font-size:18px}
+.center{text-align:center;margin-left:auto;margin-right:auto}
+.intro p+p{margin-top:16px}.intro h2{margin-bottom:22px}
+.big{background:var(--soft);border-radius:32px;padding:48px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.big div{background:var(--card);border-radius:22px;padding:28px;box-shadow:var(--sh)}
+.big strong{display:block;font-size:44px;line-height:1;color:var(--teal2);letter-spacing:-.03em}
+.big span{font-size:14px;color:var(--mut)}
+.soft{background:var(--soft)}
+.grid{display:grid;gap:24px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:26px;padding:32px;transition:transform .3s,box-shadow .3s}
+.card:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+.card h3{font-size:21px;margin:22px 0 10px}.card p{font-size:15.5px}
+.card .ic{width:56px;height:56px;border-radius:18px}
+.more{display:inline-block;margin-top:18px;font-weight:700;color:var(--teal2);font-size:15px}
+.more:after{content:" \2192";transition:margin .25s}.more:hover:after{margin-left:6px}
+.feat .card{background:transparent;border-color:transparent;padding:8px 8px 8px 0;border-radius:0}
+.feat .card:hover{transform:none;box-shadow:none}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative;counter-reset:s}
+.steps:before{content:"";position:absolute;top:27px;left:6%;right:6%;border-top:2px dashed #9fcfd0}
+.step{position:relative;text-align:left}
+.num{width:56px;height:56px;border-radius:50%;background:var(--teal2);color:#fff;font-weight:800;display:grid;place-items:center;position:relative;box-shadow:0 0 0 8px var(--bg)}
+.step h3{margin:22px 0 8px;font-size:21px}
+.tq{background:var(--card);border-radius:26px;padding:32px;box-shadow:var(--sh);display:flex;flex-direction:column;gap:22px}
+.tq p{color:var(--ink);font-size:16.5px}
+.who{display:flex;gap:12px;align-items:center;font-weight:700}
+.av{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--sky),var(--sage));display:grid;place-items:center;color:var(--teal2);font-weight:800}
+.who small{display:block;font-weight:500;color:var(--mut)}
+.stars{color:#e0a92b;letter-spacing:3px}
+.note{font-size:13px;margin-top:26px}
+.stats{background:linear-gradient(120deg,#0b4f57,#0f7f84 60%,#3fb5ad);color:#fff;border-radius:40px;padding:64px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px;position:relative;overflow:hidden}
+.stats:after{content:"";position:absolute;right:-90px;top:-90px;width:320px;height:320px;border-radius:50%;border:50px solid rgba(255,255,255,.07)}
+.stats div{position:relative;z-index:1}
+.stats strong{display:block;font-size:clamp(40px,5vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.stats span{display:block;margin-top:10px;color:#d3efec;font-size:15px}
+.img2{border-radius:140px 36px 36px 36px;overflow:hidden;aspect-ratio:1/1.05;box-shadow:0 30px 60px rgba(18,48,58,.15);background:linear-gradient(200deg,#d9efe4,#bfe3ea);transition:transform .6s}
+.img2:hover{transform:scale(1.015)}.img2 svg{width:100%;height:100%;display:block}
+.about h2{margin-bottom:22px}.about .btn{margin-top:30px}
+.modern{background:var(--sage);border-radius:40px;padding:72px 64px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
+.modern p{color:var(--ink);opacity:.8;margin-top:18px;font-size:18px}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.checks div{background:var(--card);border-radius:18px;padding:20px;font-weight:700;display:flex;gap:12px;align-items:center;box-shadow:var(--sh);transition:transform .3s}
+.checks div:hover{transform:translateY(-4px)}
+.checks i{width:28px;height:28px;border-radius:50%;background:var(--teal2);color:#fff;display:grid;place-items:center;font-style:normal;font-size:14px;flex:none}
+.cta{background:linear-gradient(135deg,#0b4f57,#0f8b8d);color:#fff;border-radius:44px;padding:88px 32px;text-align:center;position:relative;overflow:hidden}
+.cta:before,.cta:after{content:"";position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.14)}
+.cta:before{width:420px;height:420px;left:-140px;bottom:-200px}.cta:after{width:300px;height:300px;right:-80px;top:-120px}
+.cta h2,.cta p,.cta .btn{position:relative;z-index:1}
+.cta p{color:#d3efec;max-width:540px;margin:20px auto 34px;font-size:18px}
+footer{background:var(--ink);color:#cfe3e6;padding:72px 0 32px;margin-top:96px}
+footer p{color:#9fbbc1}
+.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
+footer h4{margin:0 0 16px;color:#fff;font-size:16px}
+footer li{list-style:none;margin-bottom:10px;font-size:15px}footer ul{padding:0;margin:0}
+footer li a:hover{color:#8fe0dc}
+.copy{border-top:1px solid rgba(255,255,255,.12);margin-top:48px;padding-top:24px;font-size:14px;color:#9fbbc1}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+.hero .rv{transition-delay:.1s}
+:focus-visible{outline:3px solid var(--teal);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media (max-width:1024px){.g4,.stats{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr);row-gap:40px}.steps:before{display:none}.fg{grid-template-columns:1fr 1fr}.links,.nav>.btn{display:none}.burger{display:block}
+.mnav.open{display:flex;flex-direction:column;gap:4px;padding:8px 24px 24px;border-top:1px solid var(--line)}.mnav a{padding:12px 0;font-weight:600;border-bottom:1px solid var(--line)}.mnav .btn{margin-top:14px;border:0}
+.modern{padding:48px 32px}}
+@media (max-width:860px){section{padding:64px 0}.hero .w,.two,.modern{grid-template-columns:1fr;gap:44px}.f1{left:12px}.f2{right:12px}.about .img2{order:-1}}
+@media (max-width:600px){.g3,.g4,.stats,.steps,.fg,.checks,.big{grid-template-columns:1fr}.stats{padding:40px 28px;border-radius:28px}.top span{display:none}.top .w{justify-content:center}.btn{width:100%}.big{padding:24px}.cta{padding:64px 24px;border-radius:28px}.modern{border-radius:28px;padding:36px 22px}.frame{border-radius:28px 90px 28px 28px}.f2{top:14px}}
+</style></head><body>
+<div class="top"><div class="w"><span>Helping you move better, recover stronger, and live with confidence.</span><a href="#">Book an Appointment</a></div></div>
+<header><div class="w nav">
+<a class="logo" href="#"><svg width="38" height="38" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#0b6f78"/><path d="M8 27c5-13 11-13 14-6s7 6 10-8" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><circle cx="31" cy="11" r="3" fill="#8fe0dc"/></svg><span>BackInMotion<small> Health</small></span></a>
+<nav class="links"><a href="#about">About</a><a href="#services">Services</a><a href="#approach">Our Approach</a><a href="#resources">Resources</a><a href="#contact">Contact</a></nav>
+<a class="btn p" href="#">Book an Appointment</a>
+<button class="burger" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+<nav class="mnav" id="m"><a href="#about">About</a><a href="#services">Services</a><a href="#approach">Our Approach</a><a href="#resources">Resources</a><a href="#contact">Contact</a><a class="btn p" href="#">Book an Appointment</a></nav></header>
+
+<main>
+<section class="hero"><div class="w">
+<div class="rv"><h1>Move better. Feel better.<span>Live better.</span></h1>
+<p class="l">Blah blah blah — personalized rehabilitation and wellness support designed to help you move with confidence and get back to the things that matter most.</p>
+<div class="row"><a class="btn p" href="#">Book an Appointment</a><a class="btn o" href="#services">Explore Our Services</a></div>
+<div class="trust"><span><i>✓</i>One-on-one care</span><span><i>✓</i>Goal-based plans</span><span><i>✓</i>Welcoming space</span></div></div>
+<div class="vis rv"><div class="frame"><svg viewBox="0 0 400 460" preserveAspectRatio="xMidYMid slice" aria-label="Placeholder illustration of a therapist assisting a patient">
+<defs><linearGradient id="a" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e9f6f8"/><stop offset="1" stop-color="#cfe8dd"/></linearGradient></defs>
+<rect width="400" height="460" fill="url(#a)"/><circle cx="330" cy="90" r="120" fill="#fff" opacity=".45"/><circle cx="40" cy="420" r="150" fill="#fff" opacity=".35"/>
+<path d="M0 380h400v80H0z" fill="#bfe0d6" opacity=".6"/><path d="M20 340c90-90 180-110 360-20" fill="none" stroke="#0f8b8d" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/>
+<circle cx="150" cy="150" r="34" fill="#f2c9a5"/><path d="M118 140c4-30 56-38 68-4-20-10-46-10-68 4z" fill="#3b2e2a"/>
+<path d="M104 350c-8-90 2-150 46-160 40 6 62 60 56 160z" fill="#0b6f78"/><path d="M186 230l70 40" stroke="#0b6f78" stroke-width="26" stroke-linecap="round"/>
+<circle cx="270" cy="200" r="30" fill="#c99672"/><path d="M240 190c6-28 52-30 60-2-16-10-40-10-60 2z" fill="#20181a"/>
+<path d="M232 350c-6-70 4-112 40-120 34 8 44 60 40 120z" fill="#f4b183"/><path d="M256 268l-56 16" stroke="#c99672" stroke-width="16" stroke-linecap="round"/>
+<rect x="60" y="350" width="290" height="22" rx="11" fill="#fff" opacity=".85"/></svg></div>
+<div class="float f1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21l8.8-8.3a5 5 0 0 0 0-7.1z"/></svg></div><div><b>Personalized Care</b><span>Built around your goals.</span></div></div>
+<div class="float f2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><div><b>Progress tracking</b><span>Small wins, every week.</span></div></div></div>
+</div></section>
+
+<section id="about"><div class="w two">
+<div class="intro rv"><h2>Care designed around you.</h2><p>Blah blah blah — every person has different goals, challenges, and needs. Our approach combines professional expertise, modern techniques, and personalized care to help you move forward.</p><p>Whether you're recovering, rebuilding, or simply want to move with less worry, we'll meet you where you are.</p></div>
+<div class="big rv"><div><strong>25+</strong><span>Years of experience</span></div><div><strong>1:1</strong><span>Personalized care plans</span></div><div><strong>6</strong><span>Areas of care</span></div><div><strong>100%</strong><span>Focused on you</span></div></div>
+</div></section>
+
+<section id="services" class="soft"><div class="w">
+<div class="sec-h rv"><h2>How we can help</h2><p>Blah blah blah — explore a range of services designed to support recovery, movement, and long-term wellness.</p></div>
+<div class="grid g3" id="sv"></div></div></section>
+
+<section id="approach"><div class="w">
+<div class="sec-h rv"><h2>A different approach to better health.</h2></div>
+<div class="grid g4 feat" id="ft"></div></div></section>
+
+<section class="soft"><div class="w">
+<div class="sec-h center rv" style="text-align:center"><h2>Your journey starts here.</h2></div>
+<div class="steps">
+<div class="step rv"><div class="num">01</div><h3>Connect</h3><p>Tell us what you're experiencing.</p></div>
+<div class="step rv"><div class="num">02</div><h3>Understand</h3><p>We assess your needs and goals.</p></div>
+<div class="step rv"><div class="num">03</div><h3>Plan</h3><p>Together, we create a personalized approach.</p></div>
+<div class="step rv"><div class="num">04</div><h3>Move forward</h3><p>Work toward feeling stronger and more confident.</p></div>
+</div></div></section>
+
+<section id="resources"><div class="w">
+<div class="sec-h rv"><h2>Real people. Real progress.</h2></div>
+<div class="grid g3">
+<div class="tq rv"><div class="stars">★★★★★</div><p>“Blah blah blah — I felt comfortable from the moment I walked in. The team took the time to understand what I needed.”</p><div class="who"><div class="av">S</div><div>Sarah M.<small>Placeholder testimonial</small></div></div></div>
+<div class="tq rv"><div class="stars">★★★★★</div><p>“Blah blah blah — the entire experience felt personal and supportive.”</p><div class="who"><div class="av">D</div><div>Daniel R.<small>Placeholder testimonial</small></div></div></div>
+<div class="tq rv"><div class="stars">★★★★★</div><p>“Blah blah blah — I finally feel confident getting back to the activities I enjoy.”</p><div class="who"><div class="av">E</div><div>Emily T.<small>Placeholder testimonial</small></div></div></div>
+</div><p class="note">Fictional placeholder content for design purposes only.</p></div></section>
+
+<section style="padding-top:0"><div class="w"><div class="stats rv">
+<div><strong data-n="25" data-s="+">25+</strong><span>Years of care</span></div>
+<div><strong>1000s</strong><span>of patients supported</span></div>
+<div><strong data-n="6" data-s="">6</strong><span>Areas of care</span></div>
+<div><strong data-n="1" data-s="">1</strong><span>Goal — your wellbeing</span></div></div>
+<p class="note" style="text-align:center">Placeholder figures, not verified claims.</p></div></section>
+
+<section style="padding-top:0"><div class="w two about">
+<div class="img2 rv"><svg viewBox="0 0 400 420" preserveAspectRatio="xMidYMid slice" aria-label="Placeholder illustration of a clinic space"><rect width="400" height="420" fill="#e6f4f2"/><circle cx="90" cy="80" r="110" fill="#fff" opacity=".5"/>
+<rect x="40" y="250" width="320" height="40" rx="20" fill="#fff"/><rect x="70" y="180" width="130" height="80" rx="24" fill="#0f8b8d" opacity=".85"/><rect x="215" y="160" width="110" height="100" rx="24" fill="#8fd0c8"/>
+<path d="M40 340c80-60 240-60 320 0" fill="none" stroke="#0f8b8d" stroke-width="3" stroke-dasharray="2 10" stroke-linecap="round"/><circle cx="310" cy="90" r="34" fill="#f7e2b8"/></svg></div>
+<div class="rv"><h2>More than treatment. A partner in your journey.</h2><p>Blah blah blah — BackInMotion is built around the belief that better health starts with understanding the person, not just the problem.</p><a class="btn p" href="#">Learn More About Us</a></div>
+</div></section>
+
+<section style="padding-top:0"><div class="w"><div class="modern rv"><div><h2>Evidence-informed care. Human connection.</h2><p>Blah blah blah — combining modern techniques, professional expertise, and a compassionate approach to create a better healthcare experience.</p></div>
+<div class="checks"><div><i>✓</i>Personalized treatment</div><div><i>✓</i>Evidence-informed approach</div><div><i>✓</i>Modern techniques</div><div><i>✓</i>Patient-focused care</div></div></div></div></section>
+
+<section id="contact" style="padding-top:0;padding-bottom:0"><div class="w"><div class="cta rv"><h2>Ready to get back to what you love?</h2><p>Blah blah blah — take the next step toward better movement, recovery, and confidence.</p><a class="btn w2" href="#">Book an Appointment</a></div></div></section>
+</main>
+
+<footer><div class="w"><div class="fg">
+<div><a class="logo" href="#" style="color:#fff"><svg width="34" height="34" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#3cc0bf"/><path d="M8 27c5-13 11-13 14-6s7 6 10-8" fill="none" stroke="#0e1d22" stroke-width="3.4" stroke-linecap="round"/></svg>BackInMotion</a><p style="margin-top:16px;max-width:280px">Helping you move better, feel better, and live better.</p></div>
+<div><h4>Explore</h4><ul><li><a href="#">About</a></li><li><a href="#">Services</a></li><li><a href="#">Our Approach</a></li><li><a href="#">Resources</a></li></ul></div>
+<div><h4>Support</h4><ul><li><a href="#">Contact</a></li><li><a href="#">FAQs</a></li><li><a href="#">Book an Appointment</a></li></ul></div>
+<div><h4>Connect</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li><li><a href="#">YouTube</a></li></ul></div>
+</div><div class="copy">© 2026 BackInMotion. All rights reserved.</div></div></footer>
+
+<script>
+const P='fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"';
+const ico=d=>`<div class="ic"><svg viewBox="0 0 24 24" ${P}>${d}</svg></div>`;
+const S=[
+["Physiotherapy","Personalized treatment and rehabilitation to help restore movement and reduce discomfort.",'<circle cx="12" cy="5" r="2.5"/><path d="M12 8v6l-3 7M12 14l4 3 2 4M8 11l4-1 5 2"/>'],
+["Massage Therapy","Hands-on treatment designed to support recovery, mobility, and relaxation.",'<path d="M7 11V6a1.5 1.5 0 0 1 3 0v4M10 10V4.5a1.5 1.5 0 0 1 3 0V10M13 10V6a1.5 1.5 0 0 1 3 0v6l2-1.5a1.5 1.5 0 0 1 2 2L15 20H10l-4-5a1.5 1.5 0 0 1 1-2.5z"/>'],
+["Rehabilitation","Structured programs designed to help you regain strength, movement, and confidence.",'<path d="M4 16l4-8 4 6 3-4 5 8"/><path d="M3 20h18"/>'],
+["Mobility & Movement","Targeted support to improve mobility, flexibility, and everyday movement.",'<path d="M4 12a8 8 0 0 1 14-5M20 12a8 8 0 0 1-14 5"/><path d="M18 3v4h-4M6 21v-4h4"/>'],
+["Wellness","Practical strategies to support long-term physical health and well-being.",'<path d="M12 21c-5-3-8-7-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 8-8 11z"/>'],
+["Injury Recovery","Personalized guidance to help you safely return to the activities you enjoy.",'<path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/><path d="M12 9v6M9 12h6"/>']];
+document.getElementById('sv').innerHTML=S.map(s=>`<div class="card rv">${ico(s[2])}<h3>${s[0]}</h3><p>${s[1]}</p><a class="more" href="#">Learn More</a></div>`).join('');
+const F=[
+["Personalized care","Blah blah blah — your goals are at the centre of your care.",'<path d="M20.8 5.6a5 5 0 0 0-7.1 0L12 7.3l-1.7-1.7a5 5 0 0 0-7.1 7.1L12 21l8.8-8.3a5 5 0 0 0 0-7.1z"/>'],
+["Experienced professionals","Blah blah blah — knowledgeable professionals focused on helping you move forward.",'<circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M17 5l1.5 1.5L21 4"/>'],
+["Modern approach","Blah blah blah — combining current knowledge, technology, and evidence-informed practices.",'<path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-4 10c1 1 1 2 1 3h6c0-1 0-2 1-3a6 6 0 0 0-4-10z"/>'],
+["Long-term results","Blah blah blah — helping you build healthier movement beyond your appointment.",'<path d="M3 17l6-6 4 4 8-8M15 7h6v6"/>']];
+document.getElementById('ft').innerHTML=F.map(s=>`<div class="card rv">${ico(s[2])}<h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
+e.target.querySelectorAll('[data-n]').forEach(c=>{const n=+c.dataset.n,s=c.dataset.s;let i=0;const t=setInterval(()=>{i++;c.textContent=Math.round(n*i/30)+s;if(i>=30)clearInterval(t)},30)})}}),{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+document.querySelectorAll('#m a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
+</script></body></html>
