@@ -4,7 +4,7 @@
 <title>BackInMotion Staff Hub</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#fff;--soft:#f7fafb;--sky:#eaf5f9;--sage:#e6f4ee;--ink:#12303a;--mut:#506872;--teal:#0f8b8d;--teal2:#0b6f78;--line:#e6eef0;--sh:0 8px 28px rgba(18,48,58,.07);box-sizing:border-box}
+:root{--bg:#fff;--soft:#f7fafb;--sky:#eaf5f9;--sage:#e6f4ee;--ink:#12303a;--mut:#506872;--teal:#0f8b8d;--teal2:#0b6f78;--line:#e6eef0;--sh:0 8px 28px rgba(18,48,58,.08)}
 html{scroll-behavior:smooth;scroll-padding-top:90px}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.65;overflow-x:hidden}
@@ -12,11 +12,8 @@ a{color:inherit;text-decoration:none}
 h1,h2,h3{line-height:1.12;margin:0;letter-spacing:-.02em}
 p{margin:0;color:var(--mut)}
 .w{max-width:1200px;margin:0 auto;padding:0 24px}
-section{padding:88px 0}
+section{padding:72px 0}
 .soft{background:var(--soft)}
-.top{background:var(--sky);color:var(--ink);font-size:14px;border-bottom:1px solid var(--line)}
-.top .w{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:9px;padding-bottom:9px}
-.top a{font-weight:700;color:var(--teal2)}
 header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:76px}
 .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;letter-spacing:-.03em}
@@ -32,184 +29,141 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdro
 .btn.o:hover{background:var(--sky);transform:translateY(-2px)}
 .burger{display:none;background:none;border:0;width:48px;height:48px;cursor:pointer;color:var(--ink)}
 .mnav{display:none}
-.hero{padding:72px 0 88px;background:#fff}
-.hero .w{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+.hero{padding:64px 0 72px}
+.hero .w{display:grid;grid-template-columns:1fr 1.1fr;gap:56px;align-items:center}
 .pill{display:inline-flex;align-items:center;gap:8px;background:var(--sage);color:var(--teal2);font-weight:700;font-size:14px;padding:7px 16px;border-radius:999px;margin-bottom:22px}
 .pill:before{content:"";width:8px;height:8px;border-radius:50%;background:#2fb37a}
-.hero h1{font-size:clamp(40px,5.6vw,68px);font-weight:800}
+.hero h1{font-size:clamp(38px,5.2vw,62px);font-weight:800}
 .hero h1 span{display:block;color:var(--teal2)}
-.hero p.l{font-size:19px;max-width:520px;margin:24px 0 30px}
-.search{display:flex;align-items:center;gap:12px;background:#fff;border:1.5px solid var(--line);border-radius:999px;padding:8px 8px 8px 22px;box-shadow:var(--sh);max-width:540px;transition:border-color .25s}
-.search:focus-within{border-color:var(--teal)}
-.search input{flex:1;border:0;outline:0;font:inherit;font-size:16px;color:var(--ink);background:none;min-width:0}
-.search .btn{padding:11px 22px;min-height:44px}
-.hint{font-size:14px;margin-top:16px}
-.hint b{color:var(--teal2);font-weight:600}
+.hero p.l{font-size:19px;max-width:480px;margin:22px 0 30px}
+.row{display:flex;gap:14px;flex-wrap:wrap}
 .vis{position:relative}
-.panel{background:linear-gradient(180deg,#fff,var(--soft));border:1px solid var(--line);border-radius:36px 120px 36px 36px;padding:36px;box-shadow:0 24px 60px rgba(18,48,58,.1);transition:transform .6s}
-.panel:hover{transform:scale(1.01)}
-.panel h3{font-size:18px;margin-bottom:18px}
-.mini{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.mini a{display:flex;align-items:center;gap:12px;background:#fff;border:1px solid var(--line);border-radius:18px;padding:14px;font-weight:600;font-size:15px;transition:transform .25s,box-shadow .25s}
-.mini a:hover{transform:translateY(-3px);box-shadow:var(--sh)}
-.ic{width:46px;height:46px;border-radius:14px;background:var(--sky);color:var(--teal2);display:grid;place-items:center;flex:none}
-.mini .ic{width:40px;height:40px;border-radius:12px}
-.ic svg{width:24px;height:24px}
-.float{position:absolute;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px 18px;box-shadow:var(--sh);display:flex;gap:12px;align-items:center;animation:fl 6s ease-in-out infinite}
+.art{border-radius:40px 140px 40px 40px;overflow:hidden;box-shadow:0 28px 64px rgba(18,48,58,.14);aspect-ratio:5/4.4;background:var(--sky);transition:transform .6s}
+.art:hover{transform:scale(1.012)}
+.art svg,.art img{width:100%;height:100%;display:block;object-fit:cover}
+.float{position:absolute;left:-24px;bottom:34px;background:#fff;border:1px solid var(--line);border-radius:20px;padding:14px 18px;box-shadow:var(--sh);display:flex;gap:12px;align-items:center;animation:fl 6s ease-in-out infinite}
 .float b{display:block;font-size:15px}.float span{font-size:13px;color:var(--mut)}
-.f1{left:-30px;bottom:-24px}.f2{right:-8px;top:-22px;animation-delay:-3s}
 @keyframes fl{50%{transform:translateY(-7px)}}
-h2{font-size:clamp(30px,4vw,44px);font-weight:700}
-.sec-h{max-width:640px;margin-bottom:48px}.sec-h p{margin-top:14px;font-size:18px}
-.grid{display:grid;gap:24px}.g3{grid-template-columns:repeat(3,1fr)}.g4{grid-template-columns:repeat(4,1fr)}
-.card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;transition:transform .3s,box-shadow .3s}
-.card:hover{transform:translateY(-5px);box-shadow:var(--sh)}
-.card h3{font-size:20px;margin:20px 0 10px}.card p{font-size:15.5px}
-.card .ic{width:54px;height:54px;border-radius:16px}
-.tile{display:flex;flex-direction:column;align-items:flex-start;gap:14px;padding:24px}
-.tile b{font-size:17px}
-.tile span{font-size:14px;color:var(--mut);margin-top:-8px}
-.tag{display:inline-block;background:var(--sky);color:var(--teal2);font-weight:700;font-size:13px;padding:4px 12px;border-radius:999px}
-.tag.g{background:var(--sage)}
-.news h3{margin:14px 0 8px}
-.date{font-size:13px;color:var(--mut);margin-top:18px}
-.more{display:inline-block;margin-top:16px;font-weight:700;color:var(--teal2);font-size:15px}
-.more:after{content:" \2192";transition:margin .25s}.more:hover:after{margin-left:6px}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
-.steps:before{content:"";position:absolute;top:27px;left:6%;right:6%;border-top:2px dashed #b9dcdd}
-.num{width:56px;height:56px;border-radius:50%;background:var(--teal2);color:#fff;font-weight:800;display:grid;place-items:center;position:relative;box-shadow:0 0 0 8px #fff}
-.soft .num{box-shadow:0 0 0 8px var(--soft)}
-.step h3{margin:22px 0 8px;font-size:20px}
-.tq{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px;display:flex;flex-direction:column;gap:20px;transition:transform .3s,box-shadow .3s}
-.tq:hover{transform:translateY(-5px);box-shadow:var(--sh)}
-.tq p{color:var(--ink);font-size:16.5px}
-.who{display:flex;gap:12px;align-items:center;font-weight:700}
-.av{width:44px;height:44px;border-radius:50%;background:var(--sage);display:grid;place-items:center;color:var(--teal2);font-weight:800}
-.who small{display:block;font-weight:500;color:var(--mut)}
-.note{font-size:13px;margin-top:24px}
-.stats{background:var(--sky);border:1px solid var(--line);border-radius:36px;padding:56px 48px;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
-.stats strong{display:block;font-size:clamp(38px,5vw,58px);font-weight:800;letter-spacing:-.03em;line-height:1;color:var(--teal2)}
-.stats span{display:block;margin-top:10px;font-size:15px;color:var(--mut)}
-.modern{background:var(--sage);border-radius:36px;padding:64px;display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:center}
-.modern p{color:var(--ink);opacity:.8;margin-top:16px;font-size:18px}
-.checks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.checks div{background:#fff;border-radius:18px;padding:20px;font-weight:700;display:flex;gap:12px;align-items:center;box-shadow:var(--sh);transition:transform .3s}
-.checks div:hover{transform:translateY(-4px)}
-.checks i{width:28px;height:28px;border-radius:50%;background:var(--teal2);color:#fff;display:grid;place-items:center;font-style:normal;font-size:14px;flex:none}
-.cta{background:var(--sky);border:1px solid var(--line);border-radius:40px;padding:80px 32px;text-align:center}
-.cta p{max-width:540px;margin:18px auto 30px;font-size:18px}
-footer{background:var(--soft);border-top:1px solid var(--line);padding:64px 0 28px;margin-top:88px}
-.fg{display:grid;grid-template-columns:1.6fr 1fr 1fr 1fr;gap:40px}
-footer h4{margin:0 0 16px;font-size:16px}
-footer ul{padding:0;margin:0}footer li{list-style:none;margin-bottom:10px;font-size:15px;color:var(--mut)}
-footer li a:hover{color:var(--teal2)}
-.copy{border-top:1px solid var(--line);margin-top:44px;padding-top:22px;font-size:14px;color:var(--mut)}
-.rv{opacity:0;transform:translateY(22px);transition:opacity .8s,transform .8s}.rv.in{opacity:1;transform:none}
+.ic{width:46px;height:46px;border-radius:14px;background:var(--sky);color:var(--teal2);display:grid;place-items:center;flex:none;transition:background .3s,color .3s}
+.ic svg{width:24px;height:24px}
+h2{font-size:clamp(28px,3.6vw,40px);font-weight:700}
+.sec-h{margin-bottom:34px}.sec-h p{margin-top:10px;font-size:17px}
+.grid{display:grid;gap:18px;grid-template-columns:repeat(4,1fr)}
+.tile{display:flex;align-items:center;gap:16px;background:#fff;border:1px solid var(--line);border-radius:22px;padding:20px 22px;transition:transform .3s,box-shadow .3s,border-color .3s;min-height:88px}
+.tile:hover{transform:translateY(-4px);box-shadow:var(--sh);border-color:#bfe0e2}
+.tile:hover .ic{background:var(--teal2);color:#fff}
+.tile b{display:block;font-size:16.5px;line-height:1.3}
+.tile span{display:block;font-size:13.5px;color:var(--mut);line-height:1.4;margin-top:2px}
+.tile:after{content:"\2197";margin-left:auto;color:#9bb3b9;font-size:18px;transition:color .3s}
+.tile:hover:after{color:var(--teal2)}
+.grp+.grp{margin-top:56px}
+.grp h2{font-size:24px;margin-bottom:20px;display:flex;align-items:center;gap:12px}
+.grp h2:before{content:"";width:8px;height:26px;border-radius:4px;background:var(--teal)}
+.band{background:var(--sky);border:1px solid var(--line);border-radius:36px;padding:56px;display:grid;grid-template-columns:1.2fr 1fr;gap:40px;align-items:center}
+.band p{margin-top:14px;font-size:18px}
+footer{background:var(--soft);border-top:1px solid var(--line);padding:40px 0;margin-top:72px}
+footer .w{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;font-size:14px;color:var(--mut)}
+.rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
 :focus-visible{outline:3px solid var(--teal);outline-offset:3px}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
-@media (max-width:1024px){.g4,.stats{grid-template-columns:repeat(2,1fr)}.g3{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr);row-gap:40px}.steps:before{display:none}.fg{grid-template-columns:1fr 1fr}.links,.nav>.btn{display:none}.burger{display:block}
+@media (max-width:1024px){.grid{grid-template-columns:repeat(2,1fr)}.links,.nav>.btn{display:none}.burger{display:block}
 .mnav.open{display:flex;flex-direction:column;padding:8px 24px 24px;border-top:1px solid var(--line);background:#fff}.mnav a{padding:12px 0;font-weight:600;border-bottom:1px solid var(--line)}.mnav .btn{margin-top:14px;border:0;color:#fff}
-.modern{padding:44px 32px}}
-@media (max-width:860px){section{padding:60px 0}.hero .w,.modern{grid-template-columns:1fr;gap:48px}.f1{left:10px}.f2{right:10px}}
-@media (max-width:600px){.g3,.g4,.stats,.steps,.fg,.checks{grid-template-columns:1fr}.g4.tiles{grid-template-columns:1fr 1fr}.stats{padding:36px 26px;border-radius:26px}.top span{display:none}.top .w{justify-content:center}.hero .btn,.cta .btn{width:100%}.cta{padding:56px 22px;border-radius:26px}.modern{border-radius:26px;padding:32px 20px}.panel{padding:22px;border-radius:26px 70px 26px 26px}.mini{grid-template-columns:1fr}.search .btn{padding:11px 16px}}
+.band{padding:40px 32px}}
+@media (max-width:860px){section{padding:52px 0}.hero .w,.band{grid-template-columns:1fr;gap:40px}.float{left:12px}}
+@media (max-width:600px){.grid{grid-template-columns:1fr}.hero .btn{width:100%}.art{border-radius:28px 90px 28px 28px}.band{border-radius:26px;padding:30px 22px}}
 </style></head><body>
-<div class="top"><div class="w"><span>Internal staff use only. Placeholder prototype.</span><a href="#">IT Help Desk</a></div></div>
 <header><div class="w nav">
 <a class="logo" href="#"><svg width="38" height="38" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#0b6f78"/><path d="M8 27c5-13 11-13 14-6s7 6 10-8" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/><circle cx="31" cy="11" r="3" fill="#8fe0dc"/></svg><span>BackInMotion<small> Staff Hub</small></span></a>
-<nav class="links"><a href="#quick">Quick Access</a><a href="#news">News</a><a href="#teams">Departments</a><a href="#it">IT Support</a><a href="#training">Training</a></nav>
-<a class="btn p" href="#">Sign in</a>
+<nav class="links"><a href="#clinical">Clinical</a><a href="#people">People &amp; Pay</a><a href="#ops">Operations</a><a href="#company">Company</a></nav>
+<a class="btn p" href="#all">All Links</a>
 <button class="burger" aria-label="Menu" onclick="document.getElementById('m').classList.toggle('open')"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
-<nav class="mnav" id="m"><a href="#quick">Quick Access</a><a href="#news">News</a><a href="#teams">Departments</a><a href="#it">IT Support</a><a href="#training">Training</a><a class="btn p" href="#">Sign in</a></nav></header>
+<nav class="mnav" id="m"><a href="#clinical">Clinical</a><a href="#people">People &amp; Pay</a><a href="#ops">Operations</a><a href="#company">Company</a><a class="btn p" href="#all">All Links</a></nav></header>
 
 <main>
 <section class="hero"><div class="w">
-<div class="rv"><div class="pill">All systems running normally</div>
-<h1>Everything your team needs.<span>One calm place.</span></h1>
-<p class="l">Blah blah blah — schedules, charting tools, policies, payroll and IT help for nurses, clinicians, admin and support staff, all in one place.</p>
-<div class="search"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#506872" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg><input type="text" placeholder="Search policies, forms, tools…" aria-label="Search"><a class="btn p" href="#">Search</a></div>
-<p class="hint">Popular: <b>Shift swap</b>, <b>Password reset</b>, <b>Pay stubs</b></p></div>
-<div class="vis rv"><div class="panel"><h3>Jump back in</h3><div class="mini" id="mini"></div></div>
-<div class="float f1"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/></svg></div><div><b>Next shift</b><span>Placeholder · 7:00 AM</span></div></div>
-<div class="float f2"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l4 4 10-10"/></svg></div><div><b>IT tickets</b><span>0 waiting on you</span></div></div></div>
+<div class="rv"><div class="pill">Welcome back, team</div>
+<h1>Welcome to the Hub.<span>Everything is a click away.</span></h1>
+<p class="l">Blah blah blah — jump straight to the sites, tools and resources you use every day. One place, no searching.</p>
+<div class="row"><a class="btn p" href="#all">Browse All Links</a><a class="btn o" href="#clinical">Clinical Tools</a></div></div>
+<div class="vis rv"><div class="art" id="art">
+<!-- To use your own AI image: replace the <svg> below with <img src="hero.jpg" alt="BackInMotion"> -->
+<svg viewBox="0 0 500 440" preserveAspectRatio="xMidYMid slice" aria-label="Illustration of people moving forward along a winding path">
+<defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#eaf6fa"/><stop offset="1" stop-color="#f6fbf8"/></linearGradient>
+<linearGradient id="h1" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#bfe3dc"/><stop offset="1" stop-color="#d8efe6"/></linearGradient>
+<linearGradient id="h2" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fd0c8"/><stop offset="1" stop-color="#b9e3d6"/></linearGradient></defs>
+<rect width="500" height="440" fill="url(#sky)"/>
+<circle cx="390" cy="92" r="46" fill="#fff6d9"/><circle cx="390" cy="92" r="70" fill="#fff" opacity=".5"/>
+<ellipse cx="110" cy="80" rx="58" ry="14" fill="#fff" opacity=".9"/><ellipse cx="150" cy="70" rx="40" ry="11" fill="#fff" opacity=".9"/>
+<path d="M0 270C90 200 170 210 250 250S410 200 500 240V440H0z" fill="url(#h1)"/>
+<path d="M0 320C110 270 200 300 300 290S440 270 500 300V440H0z" fill="url(#h2)"/>
+<g fill="none" stroke="#fff" stroke-width="4" opacity=".9"><path d="M300 330c-70-4-150-10-190-40"/></g>
+<path d="M-10 440C60 380 150 360 230 350S380 320 400 285C410 268 380 262 330 268" fill="none" stroke="#fff" stroke-width="38" stroke-linecap="round"/>
+<path d="M-10 440C60 380 150 360 230 350S380 320 400 285" fill="none" stroke="#0f8b8d" stroke-width="2.5" stroke-dasharray="2 12" stroke-linecap="round" opacity=".7"/>
+<g stroke-linecap="round" stroke-linejoin="round">
+<!-- figure 1, cautious with support -->
+<g transform="translate(78 336)"><circle cx="0" cy="-58" r="10" fill="#f2c9a5"/><path d="M0-46L6-14M6-14L-2 16M6-14L16 14M0-42L-12-24M0-42L14-28" stroke="#0b6f78" stroke-width="7" fill="none"/><path d="M-14-30L-20 16" stroke="#8fb8bd" stroke-width="3" fill="none"/></g>
+<!-- figure 2, walking -->
+<g transform="translate(200 318)"><circle cx="2" cy="-64" r="10" fill="#d9a67f"/><path d="M2-52L2-18M2-18L-8 16M2-18L14 14M2-48L-10-26M2-48L14-30" stroke="#0f8b8d" stroke-width="7" fill="none"/></g>
+<!-- figure 3, striding confident -->
+<g transform="translate(322 292)"><circle cx="6" cy="-70" r="11" fill="#f2c9a5"/><path d="M4-57L2-20M2-20L-14 14M2-20L20 10M4-52L-14-38M4-52L22-66" stroke="#2fb37a" stroke-width="7.5" fill="none"/></g>
+</g>
+<g fill="#7cc2ba"><circle cx="440" cy="248" r="20"/><rect x="437" y="256" width="6" height="26" fill="#6aa89f"/><circle cx="46" cy="262" r="16" opacity=".8"/><rect x="43" y="268" width="6" height="22" fill="#6aa89f"/></g>
+</svg></div>
+<div class="float"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h4l3-8 4 16 3-8h4"/></svg></div><div><b>Moving forward, together</b><span>Every step counts.</span></div></div></div>
 </div></section>
 
-<section id="quick" class="soft"><div class="w">
-<div class="sec-h rv"><h2>Quick access</h2><p>Blah blah blah — the tools you use every day, one click away.</p></div>
-<div class="grid g4 tiles" id="qa"></div></div></section>
+<section class="soft" id="all"><div class="w">
+<div class="sec-h rv"><h2>Popular links</h2><p>Blah blah blah — the places people visit most.</p></div>
+<div class="grid" id="pop"></div></div></section>
 
-<section id="news"><div class="w">
-<div class="sec-h rv"><h2>News and announcements</h2><p>Blah blah blah — updates from across the organization.</p></div>
-<div class="grid g3 news">
-<div class="card rv"><span class="tag">Nursing</span><h3>New hand-off checklist</h3><p>Blah blah blah — a simpler shift hand-off process rolls out to every unit next month.</p><div class="date">Placeholder · Sep 2026</div></div>
-<div class="card rv"><span class="tag g">IT</span><h3>Scheduled maintenance</h3><p>Blah blah blah — brief system updates are planned overnight. Save your work before you leave.</p><div class="date">Placeholder · Sep 2026</div></div>
-<div class="card rv"><span class="tag">HR</span><h3>Benefits enrolment is open</h3><p>Blah blah blah — review your options and update your details before the deadline.</p><div class="date">Placeholder · Sep 2026</div></div>
-</div></div></section>
+<section><div class="w" id="groups"></div></section>
 
-<section id="teams" class="soft"><div class="w">
-<div class="sec-h rv"><h2>Find your department</h2><p>Blah blah blah — resources, contacts and forms organized by team.</p></div>
-<div class="grid g3" id="dp"></div></div></section>
-
-<section id="it"><div class="w">
-<div class="sec-h rv"><h2>Need IT help? Four simple steps.</h2></div>
-<div class="steps">
-<div class="step rv"><div class="num">1</div><h3>Search</h3><p>Check the knowledge base for a quick fix.</p></div>
-<div class="step rv"><div class="num">2</div><h3>Submit</h3><p>Send a ticket with a short description.</p></div>
-<div class="step rv"><div class="num">3</div><h3>Track</h3><p>Follow progress and get updates.</p></div>
-<div class="step rv"><div class="num">4</div><h3>Resolved</h3><p>Confirm it works and get back to your day.</p></div>
-</div></div></section>
-
-<section class="soft"><div class="w">
-<div class="sec-h rv"><h2>Team shout-outs</h2></div>
-<div class="grid g3">
-<div class="tq rv"><p>“Blah blah blah — thank you for covering the late shift. It made a real difference to our patients.”</p><div class="who"><div class="av">S</div><div>Sarah M.<small>Placeholder · Nursing</small></div></div></div>
-<div class="tq rv"><p>“Blah blah blah — the help desk fixed my login in minutes. Fantastic support.”</p><div class="who"><div class="av">D</div><div>Daniel R.<small>Placeholder · Physiotherapy</small></div></div></div>
-<div class="tq rv"><p>“Blah blah blah — the new onboarding guide made my first week so much easier.”</p><div class="who"><div class="av">E</div><div>Emily T.<small>Placeholder · Admin</small></div></div></div>
-</div><p class="note">Fictional placeholder content.</p></div></section>
-
-<section><div class="w"><div class="stats rv">
-<div><strong data-n="24" data-s="/7">24/7</strong><span>IT help desk</span></div>
-<div><strong data-n="6" data-s="">6</strong><span>Department hubs</span></div>
-<div><strong data-n="100" data-s="+">100+</strong><span>Policies and forms</span></div>
-<div><strong data-n="1" data-s="">1</strong><span>Team, one goal</span></div></div>
-<p class="note" style="text-align:center">Placeholder figures, not verified.</p></div></section>
-
-<section id="training" style="padding-top:0"><div class="w"><div class="modern rv"><div><h2>Stay current. Stay confident.</h2><p>Blah blah blah — keep your training, certifications and policy reading up to date without the paperwork chase.</p></div>
-<div class="checks"><div><i>✓</i>Mandatory training</div><div><i>✓</i>Policy updates</div><div><i>✓</i>Infection control</div><div><i>✓</i>Privacy and security</div></div></div></div></section>
-
-<section style="padding:0"><div class="w"><div class="cta rv"><h2>Can't find what you need?</h2><p>Blah blah blah — our help desk and HR teams are here to point you in the right direction.</p><a class="btn p" href="#">Contact IT Help Desk</a></div></div></section>
+<section style="padding-top:0"><div class="w"><div class="band rv"><div><h2>Can't find what you're looking for?</h2><p>Blah blah blah — ask your manager or your team lead and they'll point you in the right direction.</p></div><div class="row" style="justify-content:flex-start"><a class="btn p" href="#">Staff Directory</a><a class="btn o" href="#">Send Feedback</a></div></div></div></section>
 </main>
 
-<footer><div class="w"><div class="fg">
-<div><a class="logo" href="#"><svg width="34" height="34" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#0b6f78"/><path d="M8 27c5-13 11-13 14-6s7 6 10-8" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg>BackInMotion</a><p style="margin-top:16px;max-width:280px">Supporting the people who support our patients.</p></div>
-<div><h4>Explore</h4><ul><li><a href="#">Quick Access</a></li><li><a href="#">News</a></li><li><a href="#">Departments</a></li><li><a href="#">Training</a></li></ul></div>
-<div><h4>Support</h4><ul><li><a href="#">IT Help Desk</a></li><li><a href="#">HR</a></li><li><a href="#">FAQs</a></li></ul></div>
-<div><h4>Connect</h4><ul><li><a href="#">Staff Newsletter</a></li><li><a href="#">Social Committee</a></li><li><a href="#">Feedback</a></li></ul></div>
-</div><div class="copy">© 2026 BackInMotion. Internal use only.</div></div></footer>
+<footer><div class="w"><a class="logo" href="#"><svg width="30" height="30" viewBox="0 0 40 40"><rect width="40" height="40" rx="12" fill="#0b6f78"/><path d="M8 27c5-13 11-13 14-6s7 6 10-8" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg>BackInMotion</a><span>© 2026 BackInMotion. Internal use only.</span></div></footer>
 
 <script>
-const P='fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"';
-const ico=d=>`<div class="ic"><svg viewBox="0 0 24 24" ${P}>${d}</svg></div>`;
-const Q=[
-["Schedule","Shifts and swaps",'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/>'],
-["Charting","Patient records",'<path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/>'],
-["Payroll","Pay stubs and hours",'<rect x="3" y="6" width="18" height="12" rx="3"/><circle cx="12" cy="12" r="2.5"/>'],
-["IT Help Desk","Tickets and fixes",'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>'],
-["Training","Courses and tests",'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>'],
-["Policies","Guides and forms",'<path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>'],
-["Supplies","Order equipment",'<path d="M4 8l8-4 8 4v9l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v9"/>'],
-["Directory","Find a colleague",'<circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M17 6h4M17 10h4"/>']];
-document.getElementById('mini').innerHTML=Q.slice(0,4).map(s=>`<a href="#"><div class="ic"><svg viewBox="0 0 24 24" ${P}>${s[2]}</svg></div>${s[0]}</a>`).join('');
-document.getElementById('qa').innerHTML=Q.map(s=>`<a class="card tile rv" href="#">${ico(s[2])}<b>${s[0]}</b><span>${s[1]}</span></a>`).join('');
-const D=[
-["Nursing","Unit guides, hand-off tools, and clinical references.",'<path d="M12 21c-5-3-8-7-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 8-8 11z"/>'],
-["Physiotherapy","Treatment protocols, equipment and patient resources.",'<circle cx="12" cy="5" r="2.5"/><path d="M12 8v6l-3 7M12 14l4 3 2 4M8 11l4-1 5 2"/>'],
-["IT Support","Help desk, software requests and security tips.",'<rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/>'],
-["HR and Payroll","Benefits, leave, pay and career development.",'<circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M17 5l1.5 1.5L21 4"/>'],
-["Operations","Facilities, supplies, scheduling and logistics.",'<path d="M4 8l8-4 8 4v9l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v9"/>'],
-["Health and Safety","Incident reporting, safety plans and wellness.",'<path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/><path d="M12 9v6M9 12h6"/>']];
-document.getElementById('dp').innerHTML=D.map(s=>`<div class="card rv">${ico(s[2])}<h3>${s[0]}</h3><p>${s[1]}</p><a class="more" href="#">Open hub</a></div>`).join('');
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);
-e.target.querySelectorAll('[data-n]').forEach(c=>{const n=+c.dataset.n,s=c.dataset.s;let i=0;const t=setInterval(()=>{i++;c.textContent=Math.round(n*i/30)+s;if(i>=30)clearInterval(t)},30)})}}),{threshold:.15});
+/* ===== EDIT YOUR LINKS HERE: replace each url with the real address ===== */
+const groups=[
+{id:"clinical",title:"Clinical",links:[
+ ["Patient Charting","Records and notes","https://example.com/charting","doc"],
+ ["Scheduling","Shifts and swaps","https://example.com/schedule","cal"],
+ ["Clinical Guidelines","Protocols and references","https://example.com/guidelines","shield"],
+ ["Patient Resources","Handouts and exercises","https://example.com/resources","heart"]]},
+{id:"people",title:"People & Pay",links:[
+ ["Payroll","Pay stubs and hours","https://example.com/payroll","card"],
+ ["Benefits","Coverage and enrolment","https://example.com/benefits","heart"],
+ ["Time Off","Request leave","https://example.com/timeoff","cal"],
+ ["Learning","Courses and certificates","https://example.com/learning","cap"]]},
+{id:"ops",title:"Operations",links:[
+ ["Supplies","Order equipment","https://example.com/supplies","box"],
+ ["Facilities","Rooms and requests","https://example.com/facilities","box"],
+ ["Forms Library","Everyday forms","https://example.com/forms","doc"],
+ ["Safety Reporting","Report an incident","https://example.com/safety","shield"]]},
+{id:"company",title:"Company",links:[
+ ["Staff Directory","Find a colleague","https://example.com/directory","user"],
+ ["Company Website","Public site","https://example.com","globe"],
+ ["Brand Guidelines","Logos and templates","https://example.com/brand","doc"],
+ ["Staff Discounts","Perks and offers","https://example.com/perks","heart"]]}
+];
+const popular=["Patient Charting","Scheduling","Payroll","Time Off","Supplies","Staff Directory","Learning","Forms Library"];
+/* ======================================================================= */
+const I={
+doc:'<path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/>',
+cal:'<rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 11h18"/>',
+shield:'<path d="M12 3l8 3v6c0 5-4 8-8 9-4-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/>',
+heart:'<path d="M12 21c-5-3-8-7-8-11a4 4 0 0 1 8-1 4 4 0 0 1 8 1c0 4-3 8-8 11z"/>',
+card:'<rect x="3" y="6" width="18" height="12" rx="3"/><circle cx="12" cy="12" r="2.5"/>',
+cap:'<path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2 9 2 12 0v-5"/>',
+box:'<path d="M4 8l8-4 8 4v9l-8 4-8-4z"/><path d="M4 8l8 4 8-4M12 12v9"/>',
+user:'<circle cx="9" cy="8" r="3.5"/><path d="M3 20c0-4 3-6 6-6s6 2 6 6M17 6h4M17 10h4"/>',
+globe:'<circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/>'};
+const tile=l=>`<a class="tile rv" href="${l[2]}" target="_blank" rel="noopener"><div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">${I[l[3]]}</svg></div><div><b>${l[0]}</b><span>${l[1]}</span></div></a>`;
+const all=groups.flatMap(g=>g.links);
+document.getElementById('pop').innerHTML=popular.map(n=>all.find(l=>l[0]===n)).filter(Boolean).map(tile).join('');
+document.getElementById('groups').innerHTML=groups.map(g=>`<div class="grp" id="${g.id}"><h2>${g.title}</h2><div class="grid">${g.links.map(tile).join('')}</div></div>`).join('');
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.rv').forEach(el=>io.observe(el));
 document.querySelectorAll('#m a').forEach(a=>a.onclick=()=>m.classList.remove('open'));
 </script></body></html>
